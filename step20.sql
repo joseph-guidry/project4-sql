@@ -1,9 +1,11 @@
 /* Step 20 */
 /* Get the Team with the highest Average score */
 
-CREATE VIEW team_avg as
+CREATE VIEW team_avg AS
 SELECT Team, AVG(TeamScore) AS Average 
-	FROM (SELECT * FROM game_scores ORDER BY Team) AS t GROUP BY team ORDER BY team;
+	FROM (SELECT * FROM game_scores 
+		  ORDER BY Team) AS t 
+	GROUP BY team; 
 
 SELECT Name, Average FROM teams
 	JOIN team_avg
@@ -13,10 +15,10 @@ SELECT Name, Average FROM teams
 DROP VIEW team_avg;
 
 /* 
-Expect Output
-+-----------------+---------+
-| Name            | Average |
-+-----------------+---------+
-| Atlanta Falcons | 38.5000 |
-+-----------------+---------+
+	Expect Output
+	+-----------------+---------+
+	| Name            | Average |
+	+-----------------+---------+
+	| Atlanta Falcons | 38.5000 |
+	+-----------------+---------+
 */

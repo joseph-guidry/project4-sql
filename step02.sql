@@ -7,7 +7,7 @@ CREATE TABLE players (
 	lastname  VARCHAR(20) NOT NULL,
 	teamID INTEGER(4),
 	playerNum INTEGER(2),
-	CONSTRAINT CHK_Team CHECK (playerNum <> NULL and teamID <> NULL),  -- THis needs to be tested!!!!!
+	CONSTRAINT CHK_Team CHECK (playerNum <> NULL and teamID <> NULL),
 	CONSTRAINT fk_teamID FOREIGN KEY(teamID) REFERENCES teams(teamID)
 	);
 

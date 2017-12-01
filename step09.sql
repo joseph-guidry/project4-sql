@@ -1,7 +1,7 @@
 /* Step 9 */
 /*  Display Team ID, Player Name, Player Number */
 
-SELECT teamID, concat(FirstName, ' ', LastName) AS Player, playerNum FROM players
+SELECT teamID, CONCAT(FirstName, ' ', LastName) AS Player, playerNum FROM players
 	WHERE teamID = 1000
     ORDER BY playerNum;
 

@@ -3,10 +3,8 @@
 
 CREATE VIEW team_points as
 SELECT Team, SUM(TeamScore) AS Points 
-	FROM (SELECT * FROM game_scores ORDER BY Team) AS t GROUP BY team ORDER BY team;
-
-SELECT * FROM team_points;
-
+	FROM (SELECT * FROM game_scores ORDER BY Team) AS t 
+	GROUP BY team ORDER BY team;
 
 SELECT Name, Points FROM teams
 	JOIN team_points

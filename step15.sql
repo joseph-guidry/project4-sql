@@ -1,13 +1,13 @@
 /* Step 15 */
 /* Output the number of players */
 
-SELECT COUNT(*) FROM players;
+SELECT COUNT(*) AS 'Number of Players' FROM players;
 
 /*
 	Expected Output
-	+----------+
-	| COUNT(*) |
-	+----------+
-	|       17 |
-	+----------+
+	+-------------------+
+	| Number of Players |
+	+-------------------+
+	|                17 |
+	+-------------------+
 */

@@ -2,24 +2,24 @@
 /* Print HomeTeam, AwayTeam, Game Date and Time  */
 
 CREATE VIEW home AS
-SELECT teams.Name AS "HomeTeam", games.GateDate from teams, games
+SELECT teams.Name AS "HomeTeam", games.GameDate FROM teams, games
 	WHERE teams.teamID = games.HomeTeamID
-	ORDER BY GateDate;
+	ORDER BY GameDate;
 
 CREATE VIEW away AS
-SELECT teams.Name AS "AwayTeam" , games.GateDate FROM teams, games
+SELECT teams.Name AS "AwayTeam" , games.GameDate FROM teams, games
 	WHERE teams.TeamID = games.VisitorTeamID
-	ORDER BY GateDate;
+	ORDER BY GameDate;
 
-SELECT HomeTeam, AwayTeam, home.GateDate FROM home, away
-	WHERE home.GateDate = away.GateDate;
+SELECT HomeTeam, AwayTeam, home.GameDate FROM home, away
+	WHERE home.GameDate = away.GameDate;
 
 DROP VIEW home, away;
 
 /*
 	Expected Output 
 	+----------------------+----------------------+---------------------+
-	| HomeTeam             | AwayTeam             | GateDate            |
+	| HomeTeam             | AwayTeam             | GameDate            |
 	+----------------------+----------------------+---------------------+
 	| Tampa Bay Buccaneers | Atlanta Falcons      | 2016-09-11 13:00:00 |
 	| Atlanta Falcons      | New Orleans Saints   | 2016-09-26 20:30:00 |
