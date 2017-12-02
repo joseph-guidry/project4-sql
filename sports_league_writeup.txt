@@ -1,0 +1,95 @@
+Name: Joseph Guidry
+Date: 12/1/2017
+Current Module: SQL
+Project Name: Sports League
+
+Project Goals:
+	<A two to three sentence description of the project and its intent>
+	In this project, SQL files are used to build a database of tables based on a particular sport. From these tables, certain
+	data was to be queried with the result combining information from multiple tables. With the help of the different commands
+	and functions from the lecture, the project is used to accomplish the steps required.
+
+Considerations:
+	<A bulleted list of considerations and conditions which affected the design of your project>
+	- Correctly build tables based on criteria needed for future queries.
+	- Use constraints to ensure proper construction of tables.
+	- Proper use of syntax for queries in retrieving the required data on each step.
+
+Initial Design:
+	<A paragraph or more that adequately describes your program's structure and layout discussing the various modules (.c and corresponding .h files) that you implemented>
+	This project required the construction of tables with data in steps. 
+	Steps 1 - 5: This is the table creation steps.
+		Step 1 - Create teams table.
+		Step 2 - Create players table.
+		Step 3 - Create player info table.
+		Step 4 - Create games table.
+		Step 5 - Create game info table.
+
+	Step 6: Fill the tables with data that will be used to fulfill the queries on the remaining steps.
+			These values are hard-coded into the INSERT statements to provide readability on the data being added.
+	
+	Step 7 - 23: Select queries for specific information about the data inserted on Step 6.
+
+Data Flow:
+	<A paragraph or longer describing the data flow of the program in a sequential manner.  Include a diagram when necessary.>
+
+	Based on this table construction on Steps 1 - 5, the required queries can be made.
+	
+	+---------+				+----------+				+--------------+	
+	| Teams	  |				| Players  |				| Player_Info  |
+	+---------+				+----------+				+--------------+
+	|Name	  | 		   /| PID      |				| PID		   |
+	|TeamID   |-|-|-----O---| FirstName|-|-|--------O-|-| Age 		   |
+	|         |            \| LastName |				| Height	   |
+	+---------+             | TeamID   |				| Weight       |
+  		\|/					| PlayerNum|				+--------------+
+		 |					+----------+				
+		 -
+		 |
+		 |
+		 -
+		 |
+		/|\
+	+------------+					+---------+
+	| Game_Score |					| Games	  |
+	+------------+					+---------+
+	| TeamID     |					|GameID	  |
+	| GameID|    |\				   /|GameDate |
+	| TeamScore  |---|---------|----|HomeTeam |
+	| OppScore   |/ 			   \|AwayTeam |
+	| GamePoints |					+---------+
+	| Outcome    |				
+	+------------+				
+
+Communication Protocol:
+	<Discuss any custom communication protocol you have used including the various request and responses that may be sent and received.>
+	
+	The project used MySQL to handle the use of SQL commands.
+
+Potential Pitfalls:
+	<Discuss any potential issues that you might run into while creating the project>
+	- Improper data input on Step 6. This could lead to disaster if there isn't a proper plan for the data needed.
+	- The proper syntax for sub-queries and SQL functions.
+	- Getting the intended output from SELECT statements.
+	- Poor relationship constraints during table creation.
+	
+Test Plan:
+	User Test:
+ 		<Describe the steps taken for each user test.>
+		- Attempt the simpler single answer queries first.
+		- Simple sub-queries.
+		- Use unions and joins to help gather pieces of data into a single temporary table.
+		- Use view to save a sub-query that can be referenced in a later query, which helps with readability. 
+	Test Cases:
+		<A brief overview of the test cases that you implemented.>
+		- Trial and Error. 
+
+Conclusion:
+	<A review of the project, what worked, what didn’t and how to improve upon your project in the future.>
+
+	The SQL project attempted to solidify a new layer of knowledge about software development that was new
+	to me prior to this week.  The use of queries and building databases was exciting to learn, though the benefits on 
+	the differences between how a query is structured and what makes a query better than another would have been helpful.
+	The overall benefit from this project helped in achieve a baseline understanding of the SQL world of software development.
+
+
