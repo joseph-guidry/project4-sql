@@ -17,7 +17,17 @@ Considerations:
 
 Initial Design:
 	<A paragraph or more that adequately describes your program's structure and layout discussing the various modules (.c and corresponding .h files) that you implemented>
+	During the making of this program, each SQL command is a step from the project documenations. As stated previously, the 
+	first five steps have the student build the tables, as described below in the Entity Relationship Diagram(ERD).  Once 
+	established, Step 6 asks to format input for each table, which will be used for the queries on the rest of the steps.
+	Once the data has been entered into the tables, each of the remaining steps query the data for specific answers.
+	Through the use of keywords learned in the lecture, queries resulted in providing the resquest information.
 	This project required the construction of tables with data in steps. 
+	
+Data Flow:
+	<A paragraph or longer describing the data flow of the program in a sequential manner.  Include a diagram when necessary.>
+	The program flowed through the following steps.
+	
 	Steps 1 - 5: This is the table creation steps.
 		Step 1 - Create teams table.
 		Step 2 - Create players table.
@@ -30,34 +40,32 @@ Initial Design:
 	
 	Step 7 - 23: Select queries for specific information about the data inserted on Step 6.
 
-Data Flow:
-	<A paragraph or longer describing the data flow of the program in a sequential manner.  Include a diagram when necessary.>
-
-	Based on this table construction on Steps 1 - 5, the required queries can be made.
 	
-	+---------+				+----------+				+--------------+	
-	| Teams	  |				| Players  |				| Player_Info  |
-	+---------+				+----------+				+--------------+
-	|Name	  | 		   /| PID      |				| PID		   |
-	|TeamID   |-|-|-----O---| FirstName|-|-|--------O-|-| Age 		   |
-	|         |            \| LastName |				| Height	   |
-	+---------+             | TeamID   |				| Weight       |
-  		\|/					| PlayerNum|				+--------------+
-		 |					+----------+				
+	Based on this table construction on Steps 1 - 5, the required queries can be made.
+	This ERD was altered from the Github page.
+	+---------+		+----------+		    +--------------+	
+	| Teams	  |		| Players  |	            | Player_Info  |
+	+---------+		+----------+		    +--------------+
+	|Name	  | 	       /| PID      |	            | PID	   |
+	|TeamID   |-|-|-----O---| FirstName|-|-|--------O-|-| Age 	   |
+	|         |            \| LastName |		    | Height	   |
+	+---------+             | TeamID   |		    | Weight       |
+  		\|/		| PlayerNum|		    +--------------+
+		 |		+----------+				
 		 -
 		 |
 		 |
 		 -
 		 |
 		/|\
-	+------------+					+---------+
-	| Game_Score |					| Games	  |
-	+------------+					+---------+
-	| TeamID     |					|GameID	  |
+	+------------+				    +---------+
+	| Game_Score |				    | Games   |
+	+------------+				    +---------+
+	| TeamID     |				    |GameID   |
 	| GameID|    |\				   /|GameDate |
-	| TeamScore  |---|---------|----|HomeTeam |
+	| TeamScore  |---|--------------------|-----|HomeTeam |
 	| OppScore   |/ 			   \|AwayTeam |
-	| GamePoints |					+---------+
+	| GamePoints |				    +---------+
 	| Outcome    |				
 	+------------+				
 
